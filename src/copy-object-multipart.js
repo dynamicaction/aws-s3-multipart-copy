@@ -1,11 +1,5 @@
 'use strict';
-const {
-    CreateMultipartUploadCommand,
-    UploadPartCopyCommand,
-    CompleteMultipartUploadCommand,
-    AbortMultipartUploadCommand,
-    ListPartsCommand
-} = require("@aws-sdk/client-s3");
+import { CreateMultipartUploadCommand, UploadPartCopyCommand, CompleteMultipartUploadCommand, AbortMultipartUploadCommand, ListPartsCommand } from "@aws-sdk/client-s3";
 
 const COPY_PART_SIZE_MINIMUM_BYTES = 5242880; // 5MB in bytes
 const DEFAULT_COPY_PART_SIZE_BYTES = 50000000; // 50 MB in bytes
@@ -193,7 +187,5 @@ function prepareResultsForCopyCompletion(copy_parts_results_array) {
     return resultArray;
 }
 
-module.exports = {
-    init: init,
-    copyObjectMultipart: copyObjectMultipart
-};
+export { init, copyObjectMultipart };
+// export const copyObjectMultipart = copyObjectMultipart;

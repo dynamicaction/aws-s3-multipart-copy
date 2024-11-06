@@ -52,5 +52,6 @@
     "should": "^13.2.1",
     "sinon": "^4.3.0"
   },
-  "snyk": true
+  "snyk": true,
+  "type": "module"
 }
